@@ -4,7 +4,7 @@
     padding: 0 1rem;
 
     display: grid;
-    grid-template-columns: 256px 1fr;
+    grid-template-columns: 256px 1fr; /* 256 se refere ao conteudo da esquerda (nossa sidebar com o usuario) e 1fr ao conteudo da direita (nossos posts) que irão se adaptar  ao resto da largura (70rem)*/
     gap: 2rem;
     align-items: flex-start;
 }
