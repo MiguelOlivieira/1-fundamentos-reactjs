@@ -4,8 +4,17 @@ import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 
 import styles from './Post.module.css';
+import { useState } from 'react';
+
+
 
 export function Post( { author, publishedAt, content } ) {  //destructuring 
+    const [comments, setComments] = useState([
+        1,
+        2,
+        
+    ])
+
 
    const publishedDateFormated = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", { //formatação através da biblioteca date-fns
     locale: ptBR,
@@ -15,6 +24,12 @@ export function Post( { author, publishedAt, content } ) {  //destructuring
     locale: ptBR,
     addSuffix : true, //exibição de caracteres antes do horário
    })
+
+   function handleUploadComment() {
+    event.preventDefault()
+    setComments([... comments, comments.length + 1]);
+   }
+
     return (
         <article className={styles.post}>
 
@@ -42,7 +57,7 @@ export function Post( { author, publishedAt, content } ) {  //destructuring
          })}
         </div>
 
-        <form className={styles.commentForm}>
+        <form onSubmit = {handleUploadComment} className={styles.commentForm}>
             <strong>deixe seu comentário</strong>
 
             <textarea 
@@ -57,9 +72,9 @@ export function Post( { author, publishedAt, content } ) {  //destructuring
         </form>
         
         <div className={styles.commentList}>
-            <Comment />
-            <Comment />
-            <Comment />
+           {comments.map(item =>{
+            return <Comment />
+           })}
         
         </div>
         
