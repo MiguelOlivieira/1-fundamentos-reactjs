@@ -55,12 +55,25 @@ const posts = [
   },
 ];
 
+const user = 
+  {
+    id: 1,
+    profile: {
+      userUrl: "https://i.pinimg.com/736x/04/10/77/0410771067bdb8018a368f7b7bfc09f4.jpg",
+      userName: "Renato Antonio Guerra",
+      role: "Jogador profissional de Roblox, LoL e fifa",
+     }
+
+  };
+
 export function App() {
   return (
   <div>
     <Header/>
     <div className={styles.wrapper  }>
-      <Sidebar/>
+      <Sidebar
+       profile = {user.profile}
+      />
             
       <main>
       {posts.map(post => {
