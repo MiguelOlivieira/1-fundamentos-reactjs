@@ -1,10 +1,12 @@
 import { ThumbsUp, Trash } from "phosphor-react";
 import styles from "./Comment.module.css";
+import { Avatar } from "./Avatar";
+import { Curtida } from "./Curtida";
 
 export function Comment(){
     return(
         <div className={styles.comment}>
-             <img src="https://i.pinimg.com/736x/04/10/77/0410771067bdb8018a368f7b7bfc09f4.jpg" alt="" />
+             <Avatar hasBorder = {false} src = "https://i.pinimg.com/736x/04/10/77/0410771067bdb8018a368f7b7bfc09f4.jpg"/>
              <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
                     <header>
@@ -19,7 +21,7 @@ export function Comment(){
                 </div>
                 <footer>
                     <button>
-                     <ThumbsUp  />
+                     <Curtida Liked = {false}/>
                      Aplaudir <span>20</span>
                      </button>
                 </footer>

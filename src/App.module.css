@@ -1,10 +1,23 @@
 .wrapper{
-    max-width: 70rem;
+    max-width: 70rem; 
     margin: 2rem auto;
     padding: 0 1rem;
 
     display: grid;
-    grid-template-columns: 256px 1fr; /* 256 se refere ao conteudo da esquerda (nossa sidebar com o usuario) e 1fr ao conteudo da direita (nossos posts) que irão se adaptar  ao resto da largura (70rem)*/
+    grid-template-columns: 256px 1fr; /* 256 se refere ao conteudo da esquerda (nossa sidebar com o usuario) e 1fr ao conteudo da direita (nossos posts) que irão se adaptar  ao resto da largura (70rem), ou seja, 2 colunas*/
     gap: 2rem;
     align-items: flex-start;
 }
+
+
+@media (max-width: 768px){
+    html{
+        font-size: 87.5%; /*Esse tamanho é o bastante (representa 14px), foi deduzido através de um calculo coniderando o tamanho de fonte atual*/
+    }                      /* (1 REM = 16PX) e 14px, sendo  necessario uma regra de 3) */
+    .wrapper{
+    grid-template-columns: 1fr; /*Vai se ajustar ao tamanho da tela, e ser apenas 1 coluna*/
+    } 
+}
+/*
+16px - 100
+14px - x     = 87.5 */
