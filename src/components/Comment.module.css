@@ -1,0 +1,92 @@
+.comment{   
+    display: flex;
+    margin-top: 1.5rem;
+    gap: 1rem;
+
+}
+
+.comment > img{
+    height: calc(3rem + 12px);
+    width: calc(3rem + 12px);
+    border-radius: 8px;
+
+
+}
+
+.commentBox{
+    flex: 1;
+}
+
+.commentContent{
+    background: var(--gray-700);
+    border-radius: 8px;
+    padding: 1rem ;
+}
+
+.commentContent header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.authorAndDate strong{
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.authorAndDate time{
+    display: block;
+    font-size: 0.75;
+    line-height: 1.6;
+    color: var(--gray-700);
+}
+
+.commentContent header button{
+    line-height: 0;
+    color: var(--gray-400);
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+
+    
+}
+
+.commentContent header button:hover{
+   cursor: pointer;
+   color: var(--red-500);
+}
+
+.commentContent p{
+    margin-top: 1rem;
+    color: var(--gray-300);
+}
+
+
+.commentBox footer{
+    margin-top: 1rem;   
+}
+
+.commentBox footer button{
+    background: transparent;
+    border: 0;
+    color: var(--gray-400);
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+}
+
+.commentBox footer button:hover{
+    color: var(--green-300);
+}
+
+.commentBox footer button svg{
+    margin-right: 0.5rem;
+}
+
+.commentBox button span::before{ /*O ::before é um pseudo-elemento que cria um conteúdo antes do elemento (Span)*/   
+    content:"\2022"; /*Código unicode para um ponto*/
+    padding: 0 0.25rem;
+}
