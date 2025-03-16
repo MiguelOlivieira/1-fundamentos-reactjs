@@ -1,7 +1,7 @@
 
 import { Header } from "./components/Header";
 import { Post } from "./components/Post";
-
+  
 import "./global.css"
 import styles from "./App.module.css"
 import { Sidebar } from "./components/Sidebar";
@@ -77,7 +77,7 @@ const user =
     profile: {
       userUrl: "https://i.pinimg.com/736x/04/10/77/0410771067bdb8018a368f7b7bfc09f4.jpg",
       name: "Renato Antonio Guerra",
-      role: "Jogador profissional de Roblox, LoL e fifa",
+      role: "Developer  ",
      }
 
   };
@@ -86,9 +86,9 @@ export function App() {
   return (
   <div>
     <Header/>
-    <div className={styles.wrapper  }>
+    <div className={styles.wrapper }>
       <Sidebar
-       profile = {user.profile}
+       profile = {user.profile} 
       />
             
       <main>

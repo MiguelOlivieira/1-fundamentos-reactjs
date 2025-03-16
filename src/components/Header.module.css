@@ -2,12 +2,14 @@
 .header{
     display: flex;
     justify-content: center;
-    background-color: var(--gray-400);
+    background-color: var(--gray-800);
     padding: 1.25rem 0;
     
 }
 
-
+.header strong{
+    align-content: center;
+}
 .header .img {
     cursor: 2rem;
 }

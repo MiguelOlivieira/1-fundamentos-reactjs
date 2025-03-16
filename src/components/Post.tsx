@@ -22,9 +22,31 @@ interface PostProps{
     publishedAt: Date;
     content: Content[];
 }
+
+interface CommentProps{
+    id: number;
+    user: {
+        avatarUrl: string;
+        name: string;
+        role: string
+    }
+    publishedAt: Date;
+}
+
+const comment: CommentProps =
+    {
+      id: 1,
+      user: {
+          avatarUrl: "https://i.pinimg.com/736x/04/10/77/0410771067bdb8018a368f7b7bfc09f4.jpg",
+          name: "Safadinho games",
+          role: "Estudante de programação",
+      },
+      publishedAt: new Date('2025-03-06 17:57'),
+    }
+
 export function Post( { author, publishedAt, content }: PostProps){  //destructuring 
     const [comments, setComments] = useState([ //State responsável por controlar os comentários
-    'Muito bom, haha'
+    'Achei topp ;D'
         
     ])
 
@@ -49,7 +71,7 @@ export function Post( { author, publishedAt, content }: PostProps){  //destructu
 
    }
 
-   function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>){
+   function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>){ //HTMLTextAreaElement é o tipo do evento
     event.target.setCustomValidity('') //Impede o problema de enviar o comentario caso de erro de invalid e permaneça mesmo apos digitando algo
 
     setNewCommentText(event.target.value) //acesso ao conteudo do formulario 
@@ -125,10 +147,12 @@ export function Post( { author, publishedAt, content }: PostProps){  //destructu
         <div className={styles.commentList}>
            {comments.map(item => { //percorre o array de comentários e cria um <Comment /> para cada comentário novo adicionado.
             return (
-            <Comment content= {item}
+            <Comment content={item}
              key={item} 
-             onDeleteComment={deleteComment}
-             />//Passando a função deletecomment para o componente <Comment/>
+             onDeleteComment={deleteComment} // Passando a função deleteComment para o componente <Comment/>
+             user={comment.user}
+             publishedAt={comment.publishedAt}
+             />
            )})}                                                       
         
         </div>
